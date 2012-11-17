@@ -13,6 +13,7 @@ function example(border)
 	drawGrid();
 	drawMan();
 	document.addEventListener("click", drawMan, false);
+	document.addEventListener("keypress", moveMan, false);
 }
 
 function drawGrid()
@@ -38,4 +39,11 @@ function drawMan()
 	 var man = new Image();
 	 man.src = 'man.gif';
 	 context.drawImage(man, 0, 0);
+}
+
+function moveMan()
+{
+	 var man = new Image();
+	 man.src = 'man.gif';
+	 context.drawImage(man, gridsize, 0);
 }

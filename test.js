@@ -36,6 +36,26 @@ function moveManY(deltaY)
 
 }
 
+function keyboardEventHandler(event)
+{
+	if(event.charCode == 97)
+	{	
+		steve.moveManX(0-gridsize)
+	}
+	else if(event.charCode == 100)
+	{
+		steve.moveManX(gridsize)
+	}
+	else if(event.charCode == 115)
+	{
+		steve.moveManY(gridsize)
+	}
+	else if(event.charCode == 119)
+	{
+		steve.moveManY(0-gridsize)
+	}
+}
+
 
 function example(border)
 {
@@ -46,7 +66,7 @@ function example(border)
 	steve = new man( 'man.gif' ,new loc(0,0));
 	
 	document.addEventListener("click", function(event){steve.moveManX(gridsize)}, false);
-	document.addEventListener("keypress", function(event){steve.moveManX(0 - gridsize)}, false);
+	document.addEventListener("keypress", keyboardEventHandler, false);
 	
 	setInterval(update,100);
 }

@@ -67,8 +67,7 @@ function example(border)
 	
 	document.addEventListener("click", function(event){steve.moveManX(gridsize)}, false);
 	document.addEventListener("keypress", keyboardEventHandler, false);
-	
-	setInterval(update,100);
+	renderLoop();
 }
 
 function drawGrid()
@@ -87,6 +86,12 @@ function drawGrid()
 		context.stroke();
 	}
 	
+}
+
+function renderLoop()
+{
+      requestAnimationFrame(renderLoop);
+      update();
 }
 
 function update()
